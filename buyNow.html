@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buy Now</title>
+    <link rel="stylesheet" href="buyNow.css" />
+    <link rel="stylesheet" media="screen and (max-width:700px)" href="Responsive-buy.css">
+
+
+    <style>
+      #shipping-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px; 
+        margin-bottom: 20px; 
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: border-color 0.3s;
+      }
+
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      input[type="tel"]:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+
+      input::placeholder {
+        color: #aaa; 
+      }
+     
+    </style>
+  </head>
+  <body>
+    
+    <div id="container">
+     
+      <h1>Confirm Your Purchase</h1>
+      <div id="cart-items"></div>
+      <div class="total" id="total-amount">Total: Rs. 0</div>
+
+      <h2>Shipping Information</h2>
+      <form id="shipping-form" name="payment-method">
+        <input type="text" id="name" placeholder="Full Name" required >
+        <input type="email" id="email" placeholder="Email" required >
+        <input type="tel" id="num" placeholder="Phone Number" required>
+        <input type="text" id="add" placeholder="Address" required >
+      </form>
+
+      <h2>Payment Details</h2>
+      <form id="payment-form">
+        <div class="payment-option">
+          <label>
+            <input type="radio" name="payment-method" value="credit" />
+            Credit Card
+          </label>
+          <div class="payment-fields" id="credit-fields" style="display: none">
+            <input type="text" placeholder="Card Number" required />
+            <input type="text" placeholder="Name on Card" required />
+            <input type="text" placeholder="Expiry Date (MM/YY)" required />
+            <input type="text" placeholder="CVV" required />
+          </div>
+        </div>
+
+        <div class="payment-option">
+          <label>
+            <input type="radio" name="payment-method" value="debit" />
+            Debit Card
+          </label>
+          <div class="payment-fields" id="debit-fields" style="display: none">
+            <input type="text" placeholder="Card Number" required />
+            <input type="text" placeholder="Name on Card" required />
+            <input type="text" placeholder="Expiry Date (MM/YY)" required />
+            <input type="text" placeholder="CVV" required />
+          </div>
+        </div>
+
+        <div class="payment-option">
+          <label>
+            <input type="radio" name="payment-method" value="cod" />
+            Cash on Delivery
+          </label>
+        </div>
+
+        <div class="payment-option">
+          <label>
+            <input type="radio" name="payment-method" value="upi" />
+            UPI
+          </label>
+          <div class="payment-fields" id="upi-fields" style="display: none">
+            <div class="upi-options">
+              <p>Select UPI App:</p>
+              <label
+                ><input type="radio" name="upi-app" value="googlepay" /> Google
+                Pay</label
+              >
+              <label
+                ><input type="radio" name="upi-app" value="paytm" />
+                Paytm</label
+              >
+              <label
+                ><input type="radio" name="upi-app" value="phonepe" />
+                PhonePe</label
+              >
+              <label
+                ><input type="radio" name="upi-app" value="other" />
+                Other</label
+              >
+              <input
+                type="text"
+                placeholder="Specify UPI ID "
+                id="other-upi"
+                style="display: none"
+              />
+            </div>
+          </div>
+        </div>
+        <button type="submit" id="payNow" onclick="payNow()">Pay Now</button>
+      </form>
+
+      <button onclick="window.history.back()">Back to Cart</button>
+    </div>
+
+  <script src="buyNow.js"></script>
+    
+  </body>
+</html>

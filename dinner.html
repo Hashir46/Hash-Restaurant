@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dinner</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" media="screen and (max-width:895px)" href="Responsive.css">
+
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+/>
+<style>
+  body{
+    background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(../img/bg-hero.jpg);
+  }
+  .cart-popup {
+        position: fixed;
+        top: 20%;
+        right: 30%;
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        display: none;
+        z-index: 1000;
+        width: auto;
+      }
+      .cart-popup h3 {
+        margin-top: 0;
+        color: black;
+      }
+      .cart-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 15px;
+        margin: 10px 0;
+      }
+      .cart-item img {
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+      }
+      .quantity-control {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .quantity-control button {
+        padding: 5px 10px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .quantity-control button:hover {
+        background-color: #0056b3;
+      }
+      .total {
+        margin-top: 10px;
+        font-weight: bold;
+        text-align: right;
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        z-index: 500;
+      }
+</style>
+</head>
+<body>
+  <div id="container">
+    <!-- navbar -->
+    <div id="navbar">
+      <img src="/img/Yellow White Emblem Restaurant Logo.png" alt="image">
+      <h2>Hash Restaurant</h2>
+      <div class="nav-items">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+      <div class="nav">
+        <ul>
+          <a href="index.html"><li id="item-1">Home</li></a>
+          <a href="services.html"><li id="item-3">Service</li></a>
+          <a href="about.html"><li id="item-2">About</li></a>
+          <div class="dropdown">
+            <li id="item-3">Menu</li>
+            <div class="dropdown-content">
+                <a href="breakfast.html">Breakfast</a>
+                <a href="lunch.html">Lunch</a>
+                <a href="" style="color: #FEA116;">Dinner</a>
+              
+            </div>
+        </div>
+          <a href="contact.html"><li id="item-4">Contact</li></a>
+          <button id="item-5" class="book-btn" >Book A Table</button>
+          <a href="#" onclick="showCart()"
+              ><li id="item-4"><i class="fa-solid fa-cart-shopping"></i></li
+            ></a>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <h1 id="breakfast" style="color: #fff;">Dinner</h1>
+  <h2 id="starter">Starters</h2>
+
+  <div id="break">
+    <div class="break-1">
+      <img src="/img/chicken_fry.jpeg" alt="">
+      <h3>Chicken 65</h3>
+      <h4>Rs.129</h4>
+      <button onclick="addToCart('Chicken 65', 129, '/img/chicken_fry.jpeg')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/chicken_full.jpeg" alt="">
+      <h3>Full Chicken</h3>
+      <h4>Rs.499</h4>
+      <button onclick="addToCart('Full Chicken', 499, '/img/chicken_full.jpeg')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/chicken_wings.jpeg" alt="">
+      <h3>Chicken Wings</h3>
+      <h4>Rs.159</h4>
+      <button onclick="addToCart('Chicken Wings', 159, '/img/chicken_wings.jpeg')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/paneer.jpeg" alt="">
+      <h3>Paneer Fry</h3>
+      <h4>Rs.139</h4>
+      <button onclick="addToCart('Paneer Fry', 139, '/img/paneer.jpeg')">Add to Cart</button>
+    </div>
+  </div>
+  
+  <h2 id="starter">Burger</h2>
+  <div id="break">
+    <div class="break-1">
+      <img src="/img/Burger.jpg" alt="">
+      <h3>Classic Burger</h3>
+      <h4>Rs.129</h4>
+      <button onclick="addToCart('Classic Burger', 129, '/img/Burger.jpg')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/burger-combo.jpeg" alt="">
+      <h3>Chicken Burger</h3>
+      <h4>Rs.139</h4>
+      <button onclick="addToCart('Chicken Burger', 139, '/img/burger-combo.jpeg')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/veg_burger.jpeg" alt="">
+      <h3>Veg Burger</h3>
+      <h4>Rs.109</h4>
+      <button onclick="addToCart('Veg Burger', 109, '/img/veg_burger.jpeg')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/chicken_burger.jpeg" alt="">
+      <h3>Burger Combo</h3>
+      <h4>Rs.199</h4>
+      <button onclick="addToCart('Burger Combo', 199, '/img/chicken_burger.jpeg')">Add to Cart</button>
+    </div>
+  </div>
+
+  <h2 id="starter">Pizza</h2>
+  <div id="break">
+    <div class="break-1">
+      <img src="/img/pizza_2.jpeg" alt="">
+      <h3>Veg Pizza</h3>
+      <h4>Rs.119</h4>
+      <button onclick="addToCart('Veg Pizza', 119, '/img/pizza_2.jpeg')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/pizza_3.jpeg" alt="">
+      <h3>Pizza Combo</h3>
+      <h4>Rs.199</h4>
+      <button onclick="addToCart('Pizza Combo', 199, '/img/pizza_3.jpeg')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/pizza_4.jpeg" alt="">
+      <h3>Chicken Pizza</h3>
+      <h4>Rs.149</h4>
+      <button onclick="addToCart('Chicken Pizza', 149, '/img/pizza_4.jpeg')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/pizza_5.jpeg" alt="">
+      <h3>Egg Pizza</h3>
+      <h4>Rs.129</h4>
+      <button onclick="addToCart('Egg Pizza', 129, '/img/pizza_5.jpeg')">Add to Cart</button>
+    </div>
+  </div>
+  
+  <h2 id="starter">Sandwich</h2>
+  <div id="break">
+    <div class="break-1">
+      <img src="/img/sandwich 2.jpeg" alt="">
+      <h3>Chicken Sandwich</h3>
+      <h4>Rs.139</h4>
+      <button onclick="addToCart('Chicken Sandwich', 139, '/img/sandwich 2.jpeg')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/sandwich 3.jpeg" alt="">
+      <h3>Veg Sandwich</h3>
+      <h4>Rs.99</h4>
+      <button onclick="addToCart('Veg Sandwich', 99, '/img/sandwich 3.jpeg')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/sandwich 4.jpeg" alt="">
+      <h3>Cheese Sandwich</h3>
+      <h4>Rs.109</h4>
+      <button onclick="addToCart('Cheese Sandwich', 109, '/img/sandwich 4.jpeg')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/sandwich.jpeg" alt="">
+      <h3>Egg Sandwich</h3>
+      <h4>Rs.119</h4>
+      <button onclick="addToCart('Egg Sandwich', 119, '/img/sandwich.jpeg')">Add to Cart</button>
+    </div>
+  </div>
+  
+  <h2 id="starter">Veg</h2>
+  <div id="break">
+    <div class="break-1">
+      <img src="/img/veg-noodles.webp" alt="">
+      <h3>Veg Noodles</h3>
+      <h4>Rs.139</h4>
+      <button onclick="addToCart('Veg Noodles', 139, '/img/veg-noodles.webp')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/veg biryani.jpeg" alt="">
+      <h3>Veg Biryani</h3>
+      <h4>Rs.149</h4>
+      <button onclick="addToCart('Veg Biryani', 149, '/img/veg biryani.jpeg')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/veg-rice 2.jpeg" alt="">
+      <h3>Veg Rice</h3>
+      <h4>Rs.119</h4>
+      <button onclick="addToCart('Veg Rice', 119, '/img/veg-rice 2.jpeg')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/paneer-rice.jpeg" alt="">
+      <h3>Paneer Rice</h3>
+      <h4>Rs.169</h4>
+      <button onclick="addToCart('Paneer Rice', 169, '/img/paneer-rice.jpeg')">Add to Cart</button>
+    </div>
+  </div>
+  
+  <h2 id="starter">Non-Veg</h2>
+  <div id="break">
+    <div class="break-1">
+      <img src="/img/chicken_biryani.jpeg" alt="">
+      <h3>Chicken Biryani</h3>
+      <h4>Rs.229</h4>
+      <button onclick="addToCart('Chicken Biryani', 229, '/img/chicken_biryani.jpeg')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/non-veg chicken.jpeg" alt="">
+      <h3>Grill Chicken</h3>
+      <h4>Rs.299</h4>
+      <button onclick="addToCart('Grill Chicken', 299, '/img/non-veg chicken.jpeg')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/non-veg noodles.jpeg" alt="">
+      <h3>Chicken Noodles</h3>
+      <h4>Rs.169</h4>
+      <button onclick="addToCart('Chicken Noodles', 169, '/img/non-veg noodles.jpeg')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/non-veg rice.jpeg" alt="">
+      <h3>Chicken Rice</h3>
+      <h4>Rs.159</h4>
+      <button onclick="addToCart('Chicken Rice', 159, '/img/non-veg rice.jpeg')">Add to Cart</button>
+    </div>
+  </div>
+  
+  <h2 id="starter">Desserts</h2>
+  <div id="break">
+    <div class="break-1">
+      <img src="/img/dessert-1.jpeg" alt="">
+      <h3>Strawberry</h3>
+      <h4>Rs.59</h4>
+      <button onclick="addToCart('Strawberry', 59, '/img/dessert-1.jpeg')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/dessert-2.jpeg" alt="">
+      <h3>Pastries</h3>
+      <h4>Rs.45</h4>
+      <button onclick="addToCart('Pastries', 45, '/img/dessert-2.jpeg')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/dessert-3.jpeg" alt="">
+      <h3>Chocolate</h3>
+      <h4>Rs.99</h4>
+      <button onclick="addToCart('Chocolate', 99, '/img/dessert-3.jpeg')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/dessert-4.jpeg" alt="">
+      <h3>Chocolate Roll</h3>
+      <h4>Rs.129</h4>
+      <button onclick="addToCart('Chocolate Roll', 129, '/img/dessert-4.jpeg')">Add to Cart</button>
+    </div>
+  </div>
+  
+  <h2 id="starter">Juice</h2>
+  <div id="break">
+    <div class="break-1">
+      <img src="/img/juice 1.jpeg" alt="">
+      <h3>Orange Juice</h3>
+      <h4>Rs.69</h4>
+      <button onclick="addToCart('Orange Juice', 69, '/img/juice 1.jpeg')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/juice 2.webp" alt="">
+      <h3>MilkShake</h3>
+      <h4>Rs.99</h4>
+      <button onclick="addToCart('MilkShake', 99, '/img/juice 2.webp')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/juice 3.jpeg" alt="">
+      <h3>Lime Soda</h3>
+      <h4>Rs.39</h4>
+      <button onclick="addToCart('Lime Soda', 39, '/img/juice 3.jpeg')">Add to Cart</button>
+    </div>
+    <div class="break-1">
+      <img src="/img/juice 4.jpeg" alt="">
+      <h3>Beetroot Milkshake</h3>
+      <h4>Rs.129</h4>
+      <button onclick="addToCart('Beetroot Milkshake', 129, '/img/juice 4.jpeg')">Add to Cart</button>
+    </div>
+  </div>
+  
+   <!-- Cart Popup -->
+   <div class="overlay" id="overlay" onclick="closeCart()"></div>
+   <div class="cart-popup" id="cart-popup">
+     <h3>Your Cart</h3>
+     <div id="cart-items"></div>
+     <div class="total" id="total-amount">Total: Rs. 0</div>
+     <button class="cls" onclick="closeCart()">Close</button>
+     <button class="buy" onclick="proceedToBuy()">Buy Now</button>
+   </div>
+
+  <!-- footer -->
+  <div id="footer">
+    <div id="company">
+      <h4>Company</h4>
+      <a href=""><p>About Us</p></a>
+      <a href=""><p>Contact Us</p></a>
+      <a href=""><p>Reservation</p></a>
+      <p>Privacy Policy</p>
+      <p>Terms & Condition</p>
+    </div>
+    <div id="Contacts">
+      <h4>Contact</h4>
+      <p style="width: 190px;">48, 7th Main, Thambu Chetty Palya Main Rd, Bengaluru, Karnataka</p>
+      <p>+91-9944604706</p>
+      <p>hash123@gmail.com</p>
+      <div class="media">
+        <!-- social media links -->
+        <a href=""><p><i class="fa-brands fa-facebook" ></i></p></a>
+        <a href=""><p><i class="fa-brands fa-twitter"></i></p></a>
+        <a href=""><p><i class="fa-brands fa-youtube"></i></p></a>
+        <a href=""><p><i class="fa-brands fa-instagram"></i></p></a>
+      </div>
+    </div>
+    <div id="openings">
+      <h4>Openings</h4>
+      <p>Monday-Saturday</p>
+      <p>9AM - 10PM</p>
+      <p>Sunday</p>
+      <p>10AM - 11PM</p>
+    </div>
+    <div id="news-letter">
+      <h4>News-letter</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, magnam.</p>
+      <input type="email"  placeholder="Email" class="news-input"><button>Sign up</button>
+    </div>
+   </div>
+   <script src="index.js"></script>
+   <script src="Cart.js"></script>
+
+</body>
+</html>

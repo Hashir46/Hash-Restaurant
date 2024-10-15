@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="Login.css">
+</head>
+<body>
+    <div id="login-form">
+      <h2 style="color: #FEA116;">Login</h2>
+      <div class="form">
+      <label id="email" >Email</label>
+      <input type="email" id="mail" placeholder="Email">
+      <label id="password">Password</label>
+      <input type="password" id="pass" placeholder="Password">
+      </div>
+      
+        <button id="btn">Login</button>
+      
+      <a href="signup.html">Sign in?</a>
+    </div>
+   
+  </div>
+  <script>
+    let email = document.getElementById('mail');
+    let password = document.getElementById('pass');
+    let button = document.getElementById('btn');
+
+    button.addEventListener('click', () => {
+      if(email.value != '' && password.value != ''){
+        alert("Successfully Login");
+        window.location.href = 'index.html';
+      }
+      else if(email.value == '' && password.value != ''){
+        alert("You forgot to enter the email");
+      }
+      else if(email.value != '' && password.value == ''){
+        alert("You forgot to enter the password");
+      }
+      else{
+        alert("Please enter email & password to login");
+      }
+    });
+  </script>
+</body>
+</html>

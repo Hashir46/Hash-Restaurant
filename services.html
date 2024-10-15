@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" media="screen and (max-width:895px)" href="Responsive.css">
+  <link rel="stylesheet" media="screen and (max-width:1190px)" href="about.css">
+
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+/>
+</head>
+<style>
+.cart-popup {
+  position: fixed;
+  top: 20%;
+  right: 30%;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 1000;
+  width: auto;
+}
+.cart-popup h3 {
+  margin-top: 0;
+  color: black;
+}
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 15px;
+  margin: 10px 0;
+}
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.quantity-control button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.quantity-control button:hover {
+  background-color: #0056b3;
+}
+.total {
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: right;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 500;
+}
+.title-abt{
+  text-align: center;
+   padding-top: 20px; 
+  font-size: 3rem;
+}
+</style>
+<body>
+  <div id="container">
+     <!-- navbar -->
+     <div id="navbar">
+      <img src="/img/Yellow White Emblem Restaurant Logo.png" alt="image">
+      <h2>Hash Restaurant</h2>
+      <div class="nav-items">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+      <div class="nav">
+        <ul>
+          <a href="index.html"><li id="item-1" >Home</li></a>
+          <a href="services.html"><li id="item-3" style="color:#FEA116;">Service</li></a>
+          <a href="about.html"><li id="item-2">About</li></a>
+          <!-- <a href="#Food-menu"> -->
+            <div class="dropdown">
+              <li id="item-3">Menu</li>
+              <div class="dropdown-content">
+                  <a href="breakfast.html">Breakfast</a>
+                  <a href="lunch.html">Lunch</a>
+                  <a href="dinner.html">Dinner</a>
+   
+          </div>
+        </div>
+          <a href="contact.html"><li id="item-4">Contact</li></a>
+          <button id="item-5" class="book-btn" onclick="bookNow()">Book A Table</button>
+          <a href="#" onclick="showCart()"
+              ><li id="item-4"><i class="fa-solid fa-cart-shopping"></i></li
+            ></a>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+     <h1 class="title-abt">Services</h1>
+   
+  <!-- About -->
+   <div id="About">
+    <div id="about-text">
+      
+      <p class="about-us"><i class="fa-solid fa-utensils" style="color: #FEA116;padding-right: 10px;"></i> Quality Foods</p>
+      <hr>
+      <p class="about-us-text">At a quality hash restaurant, you can expect a delightful array of dishes that elevate this hearty staple. Classic hash, typically made with diced potatoes, sautéed onions, and a mix of meats like corned beef or sausage, often takes center stage, especially when topped with perfectly cooked eggs. For those seeking lighter options, veggie hash offers a colorful medley of seasonal vegetables, sometimes enhanced with avocado or feta. Breakfast burritos filled with flavorful hash, eggs, and cheese provide a satisfying grab-and-go option, while hash bowls layer fresh greens with proteins and unique sauces for a nourishing meal. Many places also feature seasonal specials that highlight local ingredients, and homemade sauces can add an exciting twist to the experience. Whether you prefer a traditional dish or a creative variation, quality hash restaurants deliver comfort food at its finest.</p>
+      
+    </div>
+    <div id="about-img">
+      <img src="img/quality.jpeg" alt="">
+    </div>
+    
+   </div>
+   <div id="abt">
+    
+      <div id="about-img">
+        <img src="img/online.webp" alt="">
+      </div>
+   
+    <div id="about-text">
+    <p class="about-us"><i class="fa-solid fa-cart-shopping" style="color: #FEA116;padding-right: 10px;"></i>Online Order</p>
+    <hr>
+      <p class="about-us-text">When ordering online from a hash restaurant, it's essential to maximize your experience. Start by selecting a highly-rated restaurant that offers a varied menu. Take your time to explore the options, focusing on favorites like classic hash and veggie dishes. Many restaurants allow customization, so feel free to request modifications such as extra toppings or ingredient swaps. Look out for any online specials or discounts that might be available. Consider the timing of your order, especially during busy hours, and decide whether you prefer delivery or a quicker pickup. Make sure to use secure payment options for a hassle-free transaction, and if the restaurant provides tracking, keep an eye on your order's progress. With these tips, you can savor a delicious hash meal from the comfort of your home!</p>
+   </div>
+  </div>
+  <div id="About" >
+    <div id="about-text">
+      <p class="about-us"><i class="fa-solid fa-headset" style="color: #FEA116;padding-right: 10px;"></i>24/7 Services</p>
+      <hr>
+      <p class="about-us-text">A 24/7 service offers round-the-clock availability, ensuring that customers can access assistance or products at any time of day or night. This convenience is especially valuable for those with busy schedules or emergencies that require immediate attention. Whether it's a restaurant providing late-night dining options, a pharmacy offering essential medications, or a customer support line ready to address issues at any hour, 24/7 services cater to diverse needs. This flexibility not only enhances customer satisfaction but also builds trust, as patrons know they can rely on the service whenever necessary. In an increasingly fast-paced world, such availability is a significant advantage, making life a little easier for everyone.</p>
+      
+    </div>
+    <div id="about-img">
+      <img src="img/service.jpeg" alt="">
+    </div>
+    
+   </div>
+  
+    <!-- Teams -->
+    <div id="team">
+      <h3>Team Members</h3>
+      <h2 style="color: #fff;">Our Most Popular Chefs</h2>
+    </div>
+    
+    <div id="Team">
+      <div id="team-members">
+        <img src="/img/chef-1.jpg" alt="">
+        <h3>Jamie Oliver</h3>
+      <h4>Executive Chef</h4>
+      </div>
+      <div id="team-members">
+        <img src="/img/chef-2.jpg" alt="">
+        <h3>Thomas Keller</h3>
+         <h4>Sous Chef</h4>
+      </div>
+      <div id="team-members">
+        <img src="/img/chef-3.jpg" alt="">
+        <h3>Alain Ducasse</h3>
+         <h4>Station Chef</h4>
+      </div>
+      <div id="team-members">
+        <img src="/img/chef-4.jpg" alt="">
+        <h3>Gordon Ramsay</h3>
+         <h4>Commis Chef</h4>
+      </div>
+    </div>
+    <!-- Testimonial -->
+    <div id="test">
+      <h3>Testimonial</h3>
+      <h2>Our Clients Say!!!</h2>
+    </div>
+    <div id="Testimonial">
+      <div id="testi-monial">
+        <i class="fa-solid fa-quote-left"></i>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam cumque amet laudantium!</p>
+        <div class="testimonial-info">
+          <img src="/img/testimonial-1.jpg" alt="Testimonial" />
+          <div class="info-text">
+            <h4>Kyle William</h4>
+            <p>July 21, 2024</p>
+          </div>
+        </div>
+      </div>
+      <div id="testi-monial">
+        <i class="fa-solid fa-quote-left"></i>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam cumque amet laudantium!</p>
+        <div class="testimonial-info">
+          <img src="/img/testimonial-2.jpg" alt="Testimonial" />
+          <div class="info-text">
+            <h4>John Doe</h4>
+            <p>Aug 19, 2024</p>
+          </div>
+        </div>
+      </div>
+      <div id="testi-monial">
+          <i class="fa-solid fa-quote-left"></i>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam cumque amet laudantium!</p>
+        <div class="testimonial-info">
+          <img src="/img/testimonial-3.jpg" alt="Testimonial" />
+          <div class="info-text">
+            <h4>Jake Oliver</h4>
+            <p>Sept 9, 2024</p>
+          </div>
+        </div>
+      </div>
+      <div id="testi-monial">
+          <i class="fa-solid fa-quote-left"></i>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam cumque amet laudantium!</p>
+        <div class="testimonial-info">
+          <img src="/img/testimonial-4.jpg" alt="Testimonial" />
+          <div class="info-text">
+            <h4>Emma Watson</h4>
+            <p>Sept 14, 2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart Popup -->
+    <div class="overlay" id="overlay" onclick="closeCart()"></div>
+    <div class="cart-popup" id="cart-popup">
+      <h3>Your Cart</h3>
+      <div id="cart-items"></div>
+      <div class="total" id="total-amount">Total: Rs. 0</div>
+      <button class="cls" onclick="closeCart()">Close</button>
+     <button class="buy" onclick="proceedToBuy()">Buy Now</button>
+    </div>
+     <!-- footer -->
+      <div id="footer">
+       <div id="company">
+         <h4>Company</h4>
+         <a href=""><p>About Us</p></a>
+         <a href=""><p>Contact Us</p></a>
+         <a href=""><p>Reservation</p></a>
+         <p>Privacy Policy</p>
+         <p>Terms & Condition</p>
+       </div>
+       <div id="Contacts">
+         <h4>Contact</h4>
+         <p style="width: 190px;">48, 7th Main, Thambu Chetty Palya Main Rd, Bengaluru, Karnataka</p>
+         <p>+91-9944604706</p>
+         <p>hash123@gmail.com</p>
+         <div class="media">
+           <!-- social media links -->
+           <a href=""><p><i class="fa-brands fa-facebook" ></i></p></a>
+           <a href=""><p><i class="fa-brands fa-twitter"></i></p></a>
+           <a href=""><p><i class="fa-brands fa-youtube"></i></p></a>
+           <a href=""><p><i class="fa-brands fa-instagram"></i></p></a>
+         </div>
+       </div>
+       <div id="openings">
+         <h4>Openings</h4>
+         <p>Monday-Saturday</p>
+         <p>9AM - 10PM</p>
+         <p>Sunday</p>
+         <p>10AM - 11PM</p>
+       </div>
+       <div id="news-letter">
+         <h4>News-letter</h4>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, magnam.</p>
+         <input type="email"  placeholder="Email" class="news-input" ><button>Sign up</button>
+       </div>
+      </div>
+   </div>
+   <script src="Cart.js"></script>
+   <script src="index.js"></script>
+</body>
+</html>

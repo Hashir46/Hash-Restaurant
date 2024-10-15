@@ -1,0 +1,365 @@
+.nav {
+  display: none; 
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  top: 60px; 
+  left: 0;
+  background-color: white; 
+  z-index: 1;
+}
+
+.nav.active {
+  display: flex; 
+  background-color: #0F172B;
+  position: absolute;
+  top: 15%;
+}
+
+.hamburger {
+  display: flex; 
+  color: #FEA116;
+  padding-top: 10px;
+}
+
+.nav-items ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 305px;
+}
+
+.nav-items a, .nav-items button {
+  text-align: center;
+  padding: 10px;
+
+}
+
+.nav-items a:hover, .nav-items button:hover {
+  background-color: #f0f0f0; /* Optional: Hover effect */
+}
+/* section */
+#section{
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+.meal-text{
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.meal-text h1{
+  font-size: 45px;
+}
+#About, #abt{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+#about-img img{
+  margin: 0;
+  height: 365px;
+  width: 400px;
+}
+.food-items img{
+  height: 90px;
+  width: 90px;
+  border-radius: 56px;
+}
+.burger{
+  width: 200px;
+  padding-left: 35px;
+  font-size: 16px;
+}
+.price{
+  font-size: 16px;
+}
+#footer{
+  display: flex;
+  /* justify-content: flex-start; */
+}
+#news-letter p{
+  width: 200px;
+}
+#news-letter{
+  width: 58%;
+}
+#booking-content{
+  display: flex;
+  flex-wrap: wrap;
+  width: 72%;
+  gap: 11px;
+}
+.book-img img{
+  height: 275px;
+  width: 385px;
+}
+.book-img iframe{
+  height: 345px;
+  width: 385px;
+}
+#cart-popup{
+  position: fixed;
+  right: 10%;
+}
+@media(max-width:565px) {
+  
+  #cart-popup{
+    position: fixed;
+    right: 5%;
+  }
+  #cart-items ,#cart-items button , #total-amount,.cls,.buy{
+    font-size: 13px;
+  }
+  
+  #booking-content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    gap: 11px;
+  }
+  .book-img img, .book-img iframe{
+    height: 213px;
+    width: 338px;
+  }
+  .book-content{
+    width: 250px;
+  }
+  #navbar h2{
+    font-size: 18px;
+  }
+  #recommend h1{
+    font-size: 25px;
+  }
+  .break-1{
+    height: 310px;
+    width: 220px;
+  }
+  #news-letter{
+    width: 45%;
+    height: 60vh;
+  }
+  .about-us p{
+    width: 400px;
+  }
+}
+@media(max-width:495px) {
+  #about-img img{
+    height: 300px;
+        width: 340px;
+        object-fit: contain;
+  }
+  .meal-img img{
+    height: 40vh;
+  }
+  .meal-text h1{
+    font-size: 30px;
+  }
+  .meal-text p{
+    display: none;
+  }
+  #booking-content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 72%;
+    gap: 11px;
+  }
+  .book-img img, .book-img iframe{
+    height: 200px;
+    width: 286px;
+  }
+  .book-content{
+    width: 190px;
+  }
+  .book{
+    font-size: 25px;
+  }
+}
+
+@media(max-width:399px) {
+  #cart-popup{
+    position: fixed;
+    right: 0;
+  }
+
+  #cart-items ,#cart-items button , #total-amount,.cls,.buy{
+    font-size: 10px;
+  }
+  #booking-content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 72%;
+    gap: 11px;
+  }
+  .book-img img, .book-img iframe{
+    height: 180px;
+    width: 250px;
+  }
+  .book-content{
+    width: 170px;
+  }
+  .book-content input, .book-content input.request, .book-content button{
+    font-size: 15px;
+  }
+  .break-1{
+    height: 300px;
+    width: 220px;
+  }
+  #recommend h1{
+    font-size: 20px;
+  }
+  #navbar h2{
+    font-size: 16px;
+  }
+  #about-img img{
+    height: 235px;
+    width: 320px;
+    object-fit: contain;
+  }
+  .about-us-text{
+    font-size: 15px;
+  }
+  #footer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+  }
+  #Contacts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+ #company{
+  display: contents;
+ }
+ #news-letter{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+ }
+ .meal-text h1{
+  font-size: 22px;
+ }
+ .meal-text p{
+  font-size: 12px;
+ }
+ .meal-text button{
+  font-size: 12px;
+ }
+ #service{
+  font-size: 25px;
+ }
+ #Food-menu h3{
+  font-size: 20px;
+ }
+ #Food-menu h2{
+  font-size: 15px;
+ }
+ .food-items{
+  display: flex;
+  flex-direction: column;
+ }
+ .burger{
+  padding: 8px;
+  text-align: center;
+ }
+ #font-awesomes p{
+  font-size: 12px;
+ }
+ #read{
+  width: 120px;
+  font-size: 12px;
+ }
+ #team{
+  font-size: 12px;
+ }
+ #team-members{
+  height: 260px;
+  width: 250px;
+ }
+ #team-members img{
+  height: 169px;
+  width: 165px;
+ }
+}
+@media(max-width:357px) {
+  #breakfast{
+    font-size: 25px;
+  }
+  .break-1{
+    height: 285px;
+    width: 200px;
+  }
+  .break-1 img{
+    height: 45%;
+    width: 70%;
+  }
+  .break-1 button{
+   font-size: 15px;
+  }
+  .book-img img, .book-img iframe{
+    height: 175px;
+    width: 215px;
+  }
+  #about-img img{
+    height: 200px;
+    width: 300px;
+    object-fit: contain;
+  }
+  .about-us-text{
+    font-size: 12px;
+  }
+  .hamburger{
+    padding-right: 30px;
+    padding-top: 6px;
+  }
+  .title-abt{
+    font-size: 2rem;
+  }
+  .about-us{
+    font-size: 20px;
+  }
+  #navbar h2{
+    font-size: 13px;
+  }
+  #navbar img{
+    height: 58px;
+    width: 58px;
+  }
+  .about-us{
+    font-size: 25px;
+  }
+  .nav.active {
+    position: absolute;
+    top: 13%;
+  }
+  .nav.active ul{
+    font-size: 15px;
+  }
+  .hamburger .line{
+    height: 2px;
+    width: 20px;
+  }
+  #about-img img{
+    height: 220px;
+    width: 290px;
+  }
+  #testi-monial{
+    height: 240px;
+    width: 235px;
+  }
+  #testi-monial p, .testimonial-info, #news-letter{
+    font-size: 13px;
+  }
+  #news-letter{
+    width: 58%;
+  }
+  
+}

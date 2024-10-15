@@ -1,0 +1,32 @@
+#About{
+  display: flex;
+  flex-wrap: wrap;
+}
+#abt{
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+@media(max-width:400px) {
+  
+  .about-us{
+    font-size: 25px;
+  }
+  #about-img img{
+    height: 300px;
+        width: 362px;
+        object-fit: contain;
+  }
+}
+@media(max-width:357px) {
+  #about-img img{
+    height: 200px;
+    width: 275px;
+    object-fit: contain;
+  }
+  .title-abt{
+    font-size: 2rem;
+  }
+  .about-us{
+    font-size: 20px;
+  }
+}
