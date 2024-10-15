@@ -142,13 +142,14 @@
   }
   #news-letter{
     width: 45%;
-    height: 60vh;
+    /* height: 60vh; */
   }
   .about-us p{
     width: 400px;
   }
 }
 @media(max-width:495px) {
+  
   #about-img img{
     height: 300px;
         width: 340px;
@@ -178,6 +179,11 @@
   }
   .book{
     font-size: 25px;
+  }
+  .nav.active {
+    
+    position: absolute;
+    top: 10%;
   }
 }
 
@@ -338,7 +344,7 @@
   }
   .nav.active {
     position: absolute;
-    top: 13%;
+    top: 10%;
   }
   .nav.active ul{
     font-size: 15px;
